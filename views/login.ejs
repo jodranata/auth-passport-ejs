@@ -1,0 +1,20 @@
+<h1>Login</h1>
+<%- include ('./partials/messages.ejs') %>
+<form action="/users/login" method="post">
+  <div>
+    <label for="name">Email</label>
+    <input type="email" name="email" placeholder="Email" />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.email %></span>
+    <% } %>
+  </div>
+  <div>
+    <label for="name">Password</label>
+    <input type="password" name="password" placeholder="password" />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.password %></span>
+    <% } %>
+  </div>
+  <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="/users/register">Sign up</a></p>

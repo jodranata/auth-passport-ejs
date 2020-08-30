@@ -1,0 +1,54 @@
+<h1>Register</h1>
+<%- include ('./partials/messages.ejs') %>
+<form action="/users/register" method="post">
+  <div>
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      placeholder="Enter Name"
+      value="<%= typeof name !== 'undefined' ? name : '' %>"
+    />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.name %></span>
+    <% } %>
+  </div>
+  <div>
+    <label for="name">Email</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter your email"
+      value="<%= typeof email !== 'undefined' ? email : '' %>"
+    />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.email %></span>
+    <% } %>
+  </div>
+  <div>
+    <label for="name">Password</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Set your password"
+      value="<%= typeof password !== 'undefined' ? password : '' %>"
+    />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.password %></span>
+    <% } %>
+  </div>
+  <div>
+    <label for="name">Confirm Password</label>
+    <input
+      type="password"
+      name="confirmPassword"
+      placeholder="Confirm your password"
+      value="<%= typeof confirmPassword !== 'undefined' ? confirmPassword : '' %>"
+    />
+    <% if (typeof errors !== 'undefined') { %>
+    <span><%= errors.confirmPassword %></span>
+    <% } %>
+  </div>
+  <button type="submit">Register</button>
+</form>
+<p>Have an account? <a href="/users/login">Login</a></p>
